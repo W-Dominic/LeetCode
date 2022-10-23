@@ -10,12 +10,12 @@ class Solution:
             curr_str = s[start:end+1]
             curr_val = s[end]
             if curr_val in vals:
-                vals.clear()
+                #use sliding window
+                vals.remove(s[start])
                 start += 1
-                end = start
             else: 
                 vals.add(curr_val)
                 end += 1
                 if (len(curr_str) > longest_len): longest_len = len(curr_str)
         return longest_len
-        
+               
